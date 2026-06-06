@@ -2,6 +2,7 @@
 import React from "react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 /* ── Animated Bubble ── */
@@ -159,14 +160,23 @@ export function HeroScroll() {
       <ContainerScroll
         titleComponent={
           <>
-            <h1 className="text-4xl font-semibold text-black dark:text-white">
-              감정일기로 마음을 탐험해요 🌊
-              <br />
-              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none bg-gradient-to-r from-[#43CEF6] via-[#A29BFE] to-[#FF6B6B] bg-clip-text text-transparent">
+            <div className="mt-24 md:mt-32 mb-12 font-jua">
+              <h1 className="text-5xl md:text-[5.5rem] font-normal leading-none text-sky-400 drop-shadow-lg">
                 마음바다탐험대
-              </span>
-            </h1>
+              </h1>
+              <p className="text-2xl md:text-3xl mt-4 font-normal text-zinc-600 dark:text-zinc-400">
+                감정일기로 나의 마음을 탐험해볼까요?
+              </p>
+            </div>
           </>
+        }
+        footerComponent={
+          <div className="font-jua text-zinc-500 flex flex-col items-center gap-2">
+            <Link href="/privacy" className="text-sm hover:text-zinc-800 dark:hover:text-zinc-300 underline underline-offset-4">
+              개인정보처리방침
+            </Link>
+            <p className="text-sm">© 2026 마음 바다 탐험대</p>
+          </div>
         }
       >
         <AnimatedOceanScene />

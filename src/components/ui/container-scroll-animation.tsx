@@ -5,9 +5,11 @@ import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 export const ContainerScroll = ({
   titleComponent,
   children,
+  footerComponent,
 }: {
   titleComponent: string | React.ReactNode;
   children: React.ReactNode;
+  footerComponent?: React.ReactNode;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -49,6 +51,14 @@ export const ContainerScroll = ({
         <Card rotate={rotate} translate={translate} scale={scale}>
           {children}
         </Card>
+        {footerComponent && (
+          <motion.div
+            style={{ translateY: translate }}
+            className="mt-64 w-full text-center pb-10"
+          >
+            {footerComponent}
+          </motion.div>
+        )}
       </div>
     </div>
   );
