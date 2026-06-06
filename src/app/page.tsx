@@ -1,3 +1,9 @@
+import { HeroScroll } from "@/components/main/hero";
+
 export default function Home() {
-  return <></>;
+  return (
+    <main>
+      <HeroScroll />
+    </main>
+  );
 }
